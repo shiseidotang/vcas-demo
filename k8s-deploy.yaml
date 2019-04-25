@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: vcas-demo-svc
-  namespace: default
+  namespace: tjason
 spec:
   selector:
     app: vcas-demo-app
@@ -16,7 +16,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: vcas-demo-dep
-  namespace: default
+  namespace: tjason
 spec:
   replicas: 1
   selector:
@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: vcas-demo
-        image: cdan/vcas-demo:$${GIT_COMMIT_ID}
+        image: shiseidotang/vcas-demo:$${GIT_COMMIT_ID}
         ports:
         - containerPort: 8080
         env:
